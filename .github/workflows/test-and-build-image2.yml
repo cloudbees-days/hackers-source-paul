@@ -24,6 +24,13 @@ jobs:
     #    env:
     #      LAUNCHABLE_TOKEN: ${{ secrets.LAUNCHABLE_TOKEN }}
 
+      - name: register-artifact-step-with-options
+        uses: cloudbees-io-gha/register-build-artifact@v3
+        with:
+          name: paul-Docker-artifact
+          url: https://hub.docker.com/repository/docker/example
+          version: 1.0.0
+
       - name: Upload test results
         uses: actions/upload-artifact@v4
         with:
